@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Charming.lol</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
+  <style>
+    /* Basic reset for margins and padding */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Full screen layout */
+    body, html {
+      height: 100%;
+      width: 100%;
+      font-family: 'Poppins', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      position: relative;
+      margin: 0;
+      background: #000000; /* Set background to black */
+    }
+
+    /* "Charming.lol" Text with blue color and subtle glow effect */
+    .charming-lol {
+      font-size: 6rem;
+      font-weight: bold;
+      color: rgba(52, 152, 219, 1); /* Set the text color to blue */
+      text-shadow: 0 0 10px rgba(52, 152, 219, 0.8), 0 0 15px rgba(52, 152, 219, 0.6), 0 0 20px rgba(52, 152, 219, 0.4); /* Subtle blue glow effect */
+      position: absolute;
+      top: 30px;
+      left: 50%;
+      transform: translateX(-50%); /* Center the "Charming.lol" */
+      z-index: 2;
+      pointer-events: none; /* Prevent hover effect */
+      user-select: none; /* Make unhighlightable */
+    }
+
+    /* "Coming Soon" text with subtle glow effect */
+    .coming-soon {
+      font-size: 3rem;
+      color: rgba(52, 152, 219, 1); /* Same blue color as the Charming.lol text */
+      text-shadow: 0 0 10px rgba(52, 152, 219, 0.8), 0 0 15px rgba(52, 152, 219, 0.6), 0 0 20px rgba(52, 152, 219, 0.4); /* Subtle blue glow effect */
+      position: absolute;
+      top: 120px; /* Pushed down a bit */
+      left: 44%; /* Shifted slightly to the right */
+      transform: translateX(-50%); /* Keep it horizontally centered */
+      z-index: 1;
+      pointer-events: none; /* Prevent hover effect */
+      user-select: none; /* Make unhighlightable */
+      animation: flicker 1s infinite; /* Apply flicker animation with 1s interval */
+    }
+
+    /* Glowing blue spotlight effect that follows the cursor */
+    .cursor-spotlight {
+      position: absolute;
+      width: 100px;
+      height: 89px;
+      background-color: rgba(52, 152, 219, 0.4); /* Semi-transparent blue */
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 2;
+      opacity: 0.8; /* Slightly transparent to create a glowing effect */
+      box-shadow: 0 0 20px rgba(52, 152, 219, 0.8), 0 0 40px rgba(52, 152, 219, 0.6); /* Blue glowing shadow */
+      transition: transform 0.1s ease-out; /* Smooth movement */
+    }
+
+    /* Flickering effect keyframes */
+    @keyframes flicker {
+      0% { opacity: 1; }
+      10% { opacity: 0.2; }
+      20% { opacity: 1; }
+      30% { opacity: 0.4; }
+      40% { opacity: 1; }
+      50% { opacity: 0.3; }
+      60% { opacity: 1; }
+      70% { opacity: 0.5; }
+      80% { opacity: 1; }
+      90% { opacity: 0.1; }
+      100% { opacity: 1; }
+    }
+
+    /* Blue bar under the "Coming Soon" text */
+    .blue-bar {
+      position: absolute;
+      top: 250px; /* Positioned a bit lower than before */
+      left: 50%;
+      width: 90%; /* Much longer bar */
+      height: 5px;
+      background-color: rgba(52, 152, 219, 1); /* Same blue as text */
+      transform: translateX(-50%); /* Center the bar */
+      border-radius: 50px; /* Rounded ends */
+      z-index: 1;
+      user-select: none; /* Prevent dragging of the bar */
+    }
+
+    /* Styling for the discord image */
+    .discord-text {
+      font-size: 1.5rem;
+      color: white;
+      text-align: center;
+      margin-top: 20px;
+      position: absolute;
+      top: 750px; /* Moved much lower */
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 1;
+    }
+
+    /* Discord image styling */
+    .discord-img {
+      position: absolute;
+      top: 789px; /* Moved much lower */
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px; /* Made the image smaller */
+      height: auto; /* Maintain aspect ratio */
+      z-index: 1;
+      cursor: pointer; /* Make the image appear clickable */
+    }
+
+    /* Handle scroll effect to fade out text and elements */
+    .fade-on-scroll {
+      transition: opacity 0.5s ease;
+    }
+
+    /* Styling for the additional image above the words */
+    .top-image {
+      position: absolute;
+      top: 277px; /* Raised the image a bit closer to the "We provide a lot of tools" text */
+      left: 50%;
+      transform: translateX(-50%);
+      width: 500px; /* Adjust image size */
+      height: auto; /* Maintain aspect ratio */
+      z-index: 1;
+    }
+
+  </style>
+</head>
+<body>
+
+<!-- Additional image above the "We provide a lot of tools" text -->
+<img src="imgs/ccccc.png" class="top-image" alt="Additional Image">
+
+<!-- "Charming.lol" Text -->
+<div class="charming-lol fade-on-scroll">Charming.lol</div>
+
+<!-- "Coming Soon" Text -->
+<div class="coming-soon fade-on-scroll">Coming Soon</div>
+
+<!-- Blue bar under "Coming Soon" -->
+<div class="blue-bar fade-on-scroll"></div>
+
+<!-- Text above the Discord image -->
+<div class="discord-text">
+  We provide a lot of tools, and other services.Make sure to join the Discord
+</div>
+
+<!-- Discord Image below the text -->
+<img src="imgs/discordd.webp" class="discord-img fade-on-scroll" alt="Discord Image" onclick="window.location.href='https://discord.gg/nB9VXNkX';">
+
+<!-- Glowing blue spotlight -->
+<div class="cursor-spotlight"></div>
+
+<script>
+  // Glowing circle that follows the cursor
+  const cursorSpotlight = document.querySelector('.cursor-spotlight');
+
+  // Move the glowing circle with the cursor
+  window.addEventListener('mousemove', (e) => {
+    // Get cursor position
+    const x = e.clientX;
+    const y = e.clientY;
+
+    // Move the spotlight circle to the cursor
+    cursorSpotlight.style.left = `${x - cursorSpotlight.offsetWidth / 2}px`;
+    cursorSpotlight.style.top = `${y - cursorSpotlight.offsetHeight / 2}px`;
+  });
+
+  // Handle scroll effect to fade out the text when scrolling
+  const charmingLol = document.querySelector('.charming-lol');
+  const comingSoon = document.querySelector('.coming-soon');
+  const blueBar = document.querySelector('.blue-bar');
+  const discordImg = document.querySelector('.discord-img');
+  const discordText = document.querySelector('.discord-text');
+  const topImage = document.querySelector('.top-image');
+
+  window.addEventListener('scroll', () => {
+    const scrollPercentage = window.scrollY / (document.body.scrollHeight - window.innerHeight);
+    const opacityValue = 1 - scrollPercentage; // Text opacity decreases as the user scrolls
+
+    // Gradually fade out the texts, blue bar, and image as user scrolls
+    charmingLol.style.opacity = opacityValue;
+    comingSoon.style.opacity = opacityValue;
+    blueBar.style.opacity = opacityValue;
+    discordImg.style.opacity = opacityValue;
+    discordText.style.opacity = opacityValue;
+    topImage.style.opacity = opacityValue;
+  });
+</script>
+
+</body>
+</html>

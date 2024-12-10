@@ -1,0 +1,146 @@
+/* Basic reset for margins and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Full screen layout */
+body, html {
+    height: 100%;
+    width: 100%;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+    margin: 0;
+    background-color: black; /* Set background to black */
+}
+
+/* Color changing background */
+.background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(45deg, #3498db, #8e44ad);
+    background-size: 300% 300%;
+    animation: gradient 5s ease infinite;
+    pointer-events: none; /* Prevent interaction with background */
+}
+
+/* Keyframes for background color change animation */
+@keyframes gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Styles for the "Charming.lol" and "Coming Soon" texts */
+.message-container {
+    z-index: 1;
+    text-align: center;
+    color: white;
+    position: relative;
+    transition: opacity 0.5s ease-in-out; /* Smooth transition for opacity */
+}
+
+/* "Charming.lol" text with transparent fill and visible rim */
+.message-container h2 {
+    font-size: 6rem;
+    font-weight: bold;
+    color: transparent;
+    text-shadow: 0 0 5px white, 0 0 10px white, 0 0 15px white, 0 0 20px white; /* White rim around text */
+    margin-bottom: 20px;
+    pointer-events: none; /* Make unhighlightable */
+    user-select: none; /* Make unhighlightable */
+}
+
+/* "Coming Soon" text */
+#coming-soon {
+    font-size: 3rem;
+    font-weight: bold;
+    color: rgba(52, 152, 219, 1); /* Same blue color as the Charming.lol text */
+    text-shadow: 0 0 5px rgba(52, 152, 219, 0.8), 0 0 10px rgba(52, 152, 219, 0.7), 0 0 15px rgba(52, 152, 219, 0.6), 0 0 20px rgba(52, 152, 219, 0.5); /* Blue rim glow effect */
+    position: absolute;
+    top: 120px; /* Pushed up closer to "Charming.lol" */
+    left: 47%; /* Shifted slightly to the right */
+    transform: translateX(-50%); /* Keep it horizontally centered */
+    z-index: 1;
+    pointer-events: none; /* Prevent hover effect */
+    user-select: none; /* Make unhighlightable */
+    animation: flicker 3s infinite; /* Slower flicker with a longer duration */
+}
+
+/* Flickering effect keyframes */
+@keyframes flicker {
+    0% { opacity: 1; }
+    10% { opacity: 0.2; }
+    20% { opacity: 1; }
+    30% { opacity: 0.4; }
+    40% { opacity: 1; }
+    50% { opacity: 0.3; }
+    60% { opacity: 1; }
+    70% { opacity: 0.5; }
+    80% { opacity: 1; }
+    90% { opacity: 0.1; }
+    100% { opacity: 1; }
+}
+
+/* Slim bar beneath the texts */
+.slim-bar {
+    position: absolute;
+    bottom: 10px; /* Distance from the bottom of the screen */
+    width: 60%; /* Adjust the width of the slim bar */
+    height: 5px; /* Slim height */
+    background-color: #3498db; /* Blue color */
+    border-radius: 2px; /* Rounded corners */
+}
+
+/* Circle that follows the cursor */
+.cursor-circle {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color: white;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 2;
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.3s ease-in-out, transform 0.1s ease-out;
+}
+
+/* Styling for the additional image above the words */
+.top-image {
+    position: absolute;
+    top: 277px; /* Raised the image a bit closer to the "We provide a lot of tools" text */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 500px; /* Adjust image size */
+    height: auto; /* Maintain aspect ratio */
+    z-index: 0; /* Glow effect should be behind the image */
+    box-shadow: 0 0 100px rgba(52, 152, 219, 1), 0 0 200px rgba(52, 152, 219, 0.7), 0 0 300px rgba(52, 152, 219, 0.5); /* Larger, more intense blue glow */
+}
+
+/* Styling for the discord image */
+.discord-img {
+    position: absolute;
+    top: 789px; /* Position as needed */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120px;
+    height: auto;
+    z-index: 1;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    /* Add subtle box-shadow to give it some depth */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* 3D effect on hover */
+.discord-img:hover {
+    transform: translateX(-50%) rotateY(15deg) rotateX(15deg) scale(1.1); /* Apply rotation and scaling */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* Deeper shadow for a 3D feel */
+}
